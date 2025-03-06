@@ -1,0 +1,232 @@
+/* src/components/Dashboard.css */
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Merriweather', serif;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 250px;
+    background: #d84315; /* Deep maroon */
+    color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin: 1rem 0;
+  }
+  
+  .sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .sidebar nav ul li a.active,
+  .sidebar nav ul li a:hover {
+    font-weight: bold;
+    color: #ffcc80; /* Saffron highlight */
+    transform: scale(1.05);
+  }
+  
+  /* Dashboard main content styles */
+  .dashboard-content {
+    flex: 1;
+    background: #fff3e0; /* Light, warm background */
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Section styling within dashboard */
+  .dashboard-section {
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-section h2 {
+    color: #d84315;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .dashboard-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+    .sidebar {
+      width: 100%;
+      padding: 1rem;
+      flex-direction: row;
+      justify-content: space-around;
+      box-shadow: none;
+    }
+    .sidebar h2 {
+      display: none;
+    }
+    .sidebar nav ul {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+    }
+    .sidebar nav ul li {
+      margin: 0;
+    }
+    .dashboard-content {
+      padding: 1rem;
+    }
+  }
+/* src/components/Dashboard.css */
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Merriweather', serif;
+  }
+  
+  /* Sidebar styles for desktop */
+  .sidebar {
+    width: 250px;
+    background: #d84315; /* Deep maroon */
+    color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin: 1rem 0;
+  }
+  
+  .sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .sidebar nav ul li a.active,
+  .sidebar nav ul li a:hover {
+    font-weight: bold;
+    color: #ffcc80; /* Saffron highlight */
+    transform: scale(1.05);
+  }
+  
+  /* Dashboard main content styles */
+  .dashboard-content {
+    flex: 1;
+    background: #fff3e0; /* Light, warm background */
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Section styling within dashboard */
+  .dashboard-section {
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-section h2 {
+    color: #d84315;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .dashboard-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive styles for mobile */
+  @media screen and (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: none;
+    }
+    
+    .sidebar h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    
+    .sidebar nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .sidebar nav ul li {
+      margin: 0;
+      padding: 0.5rem;
+    }
+    
+    .sidebar nav ul li a {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+    }
+    
+    .dashboard-content {
+      padding: 1rem;
+    }
+  }
+    

@@ -1,0 +1,58 @@
+/* src/components/ScanQR.css */
+.scanqr-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.qr-reader-container {
+  margin-top: 2rem;
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scanqr-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.scanqr-button {
+  background-color: #d84315;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.scanqr-button:hover {
+  background-color: #bf360c;
+  transform: scale(1.05);
+}
+
+.close-scanner-button {
+  margin-top: 1rem;
+  background-color: #bf360c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.close-scanner-button:hover {
+  background-color: #a72a00;
+  transform: scale(1.05);
+}
+
+.qr-result {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
