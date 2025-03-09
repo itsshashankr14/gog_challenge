@@ -10,8 +10,8 @@ function Points() {
         Currently, you have <strong>150</strong> points.
       </p>
       <p>
-        Every point represents a step towards inner peace and a cleaner, sacred space.
-        May your efforts be blessed and your path illuminated.
+        Every point is a step towards inner peace and a cleaner, sacred space.
+        May your path be illuminated.
       </p>
     </div>
   );

@@ -22,7 +22,7 @@ function CombinedAuth() {
   const [showAlert, setShowAlert] = useState(false);
   const [loginAttempts, setLoginAttempts] = useState(0);
 
-  // Display an alert message for 3 seconds with error code and message
+  // Display alert for 3 seconds (includes error code and message)
   const showAlertMessage = (message, type = "error") => {
     setErrorMsg(message);
     setShowAlert(true);
@@ -35,12 +35,10 @@ function CombinedAuth() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Reset login attempts on successful login
       setLoginAttempts(0);
-      navigate('/dashboard'); // Redirect after successful login
+      navigate('/dashboard'); // On successful login, redirect to Dashboard
     } catch (error) {
       console.log("Login error code:", error.code);
-      // Increment loginAttempts for both wrong-password and user-not-found errors
       if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
         setLoginAttempts(prev => prev + 1);
       }
@@ -62,12 +60,10 @@ function CombinedAuth() {
         email,
         createdAt: new Date(),
       });
-      // Switch to login mode after successful signup
-      setMode('login');
+      setMode('login'); // Switch to login mode after signup
       showAlertMessage("Signup successful! Please log in.", "success");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
-        // Automatically switch to login if the user already exists
         setMode('login');
         showAlertMessage("User already exists. Please log in.");
       } else {
@@ -89,7 +85,7 @@ function CombinedAuth() {
     }
   };
 
-  // Clear form fields when mode changes
+  // Clear form fields when switching modes
   useEffect(() => {
     setEmail('');
     setPassword('');

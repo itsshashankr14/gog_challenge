@@ -6,8 +6,8 @@ function Rewards() {
     <div className="dashboard-section">
       <h2>Rewards</h2>
       <p>
-        Redeem your points for exclusive benefits such as fast-track darshan passes and other special tokens of devotion.
-        Your contributions are appreciated and rewarded.
+        Redeem your points for exclusive benefits such as fast-track darshan passes and special tokens of devotion.
+        Your efforts are celebrated.
       </p>
     </div>
   );

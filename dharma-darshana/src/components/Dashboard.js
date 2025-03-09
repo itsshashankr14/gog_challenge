@@ -16,38 +16,27 @@ function Dashboard() {
         <nav>
           <ul>
             <li>
-              <NavLink 
-                to="/dashboard" 
-                end 
-                className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to="/dashboard" end className={({ isActive }) => (isActive ? "active" : "")}>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/dashboard/scanqr" 
-                className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to="/dashboard/scanqr" className={({ isActive }) => (isActive ? "active" : "")}>
                 Scan QR
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/dashboard/points" 
-                className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to="/dashboard/points" className={({ isActive }) => (isActive ? "active" : "")}>
                 Points
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/dashboard/rewards" 
-                className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to="/dashboard/rewards" className={({ isActive }) => (isActive ? "active" : "")}>
                 Rewards
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/dashboard/contact" 
-                className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to="/dashboard/contact" className={({ isActive }) => (isActive ? "active" : "")}>
                 Contact Us
               </NavLink>
             </li>
