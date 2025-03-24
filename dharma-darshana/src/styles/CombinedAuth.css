@@ -1,33 +1,37 @@
-/* src/components/CombinedAuth.css */
-
+/* 🌅 Devotional Orange Theme for Authentication */
 .combined-auth-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 95vh;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ffcc80, #d84315);
+  background: linear-gradient(135deg, #ff6f00, #ffcc80, #f57c00);
   padding: 20px;
   font-family: 'Merriweather', serif;
 }
 
+/* 📜 Devotional Welcome Section */
 .intro-section {
   flex: 1;
   color: #fff;
   padding: 2rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .intro-section h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
+  color: #fff8e1;
 }
 
 .intro-section p {
   font-size: 1.2rem;
   line-height: 1.6;
+  color: #fff3e0;
 }
 
+/* 🔥 Authentication Form Section */
 .form-section {
   flex: 1;
   display: flex;
@@ -36,23 +40,24 @@
 }
 
 .auth-form {
-  background-color: rgba(255, 255, 255, 0.97);
+  background: rgba(255, 245, 235, 0.95);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   width: 100%;
   max-width: 400px;
+  border: 3px solid #ff6f00;
   animation: slideIn 0.8s ease-out;
-  border: 2px solid #d84315;
 }
 
 .auth-form h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #d84315;
+  color: #ff6f00;
   font-family: 'Playfair Display', serif;
 }
 
+/* 🌟 Input Fields */
 .auth-form input {
   width: 100%;
   padding: 0.75rem;
@@ -61,40 +66,46 @@
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #fff8e1;
+  color: #5d4037;
 }
 
 .auth-form input:focus {
-  border-color: #d84315;
-  box-shadow: 0 0 8px rgba(216, 67, 21, 0.5);
+  border-color: #ff6f00;
+  box-shadow: 0 0 10px rgba(255, 111, 0, 0.8);
   outline: none;
 }
 
+/* 🔘 Button Effects */
 .auth-form button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #d84315;
+  background: linear-gradient(90deg, #ff6f00, #ff8f00);
   color: #fff;
   font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .auth-form button:hover {
-  background-color: #bf360c;
-  transform: scale(1.02);
+  background: linear-gradient(90deg, #e65100, #ff9800);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 111, 0, 0.9);
 }
 
+/* 🧘 Forgot Password */
 .forgot-password {
   text-align: center;
   margin-top: 0.5rem;
-  color: #d84315;
+  color: #ff6f00;
   cursor: pointer;
   font-weight: bold;
 }
 
+/* 🔁 Toggle Signup/Login */
 .toggle-text {
   text-align: center;
   margin-top: 1rem;
@@ -102,7 +113,7 @@
 }
 
 .toggle-text span {
-  color: #d84315;
+  color: #e65100;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -112,27 +123,32 @@
   color: #bf360c;
 }
 
-.alert {
+/* ✅ Success Message Animation */
+.success-message {
   position: fixed;
-  top: 20px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #c62828;
+  background: linear-gradient(90deg, #ff9800, #ff6f00);
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   animation: fadeInOut 3s ease forwards;
+  font-size: 1rem;
+  font-weight: bold;
   z-index: 1000;
 }
 
+/* ✨ Alert Fade In & Out */
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
-  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
-  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
 }
 
+/* 🎭 Smooth Entry Animation */
 @keyframes slideIn {
   from { transform: translateX(100px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }

@@ -1,18 +1,26 @@
-// src/components/Points.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Points() {
+  const [points, setPoints] = useState(50); // Default points
+
+  useEffect(() => {
+    const storedPoints = parseInt(localStorage.getItem('userPoints')) || 50;
+    setPoints(storedPoints);
+  }, []);
+
   return (
-    <div className="dashboard-section">
-      <h2>Your Points & Spiritual Experience</h2>
-      <p>
-        Your contributions not only earn you points but also enrich your spiritual journey.
-        Currently, you have <strong>150</strong> points.
-      </p>
-      <p>
-        Every point is a step towards inner peace and a cleaner, sacred space.
-        May your path be illuminated.
-      </p>
+    <div className="points-container">
+      <h2>🌿 Your Spiritual Progress</h2>
+      <p>“Each step of virtue, generosity, and devotion brings you closer to enlightenment.”</p>
+      
+      {/* Points Display */}
+      <div className="points-tracker">
+        <h3>🌟 Dharma Points</h3>
+        <span><strong>{points}</strong> / 100</span>
+        <div className="points-bar">
+          <div className="points-fill" style={{ width: `${(points / 100) * 100}%` }}></div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.dashboard-section > h2 {
+    color: chocolate;
+    font-size: 2rem;
+}
+
+.dashboard-section > p {
+    color: chocolate;
+    font-size: 1.2rem;
+}

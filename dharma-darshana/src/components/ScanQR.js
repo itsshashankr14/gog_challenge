@@ -1,54 +1,44 @@
 // src/components/ScanQR.js
-import React, { useState } from 'react';
-import {QrReader} from 'react-qr-reader';
-import '../styles/ScanQR.css';
+import React, { useState, useEffect, useRef } from "react";
+import { Html5QrcodeScanner } from "html5-qrcode";
+import "../styles/ScanQR.css";
 
 function ScanQR() {
   const [qrResult, setQrResult] = useState(null);
-  const [showScanner, setShowScanner] = useState(true);
+  const scannerRef = useRef(null);
 
-  const handleScan = (data) => {
-    if (data) {
-      setQrResult(data);
-      // Optionally hide the scanner after scanning
-      // setShowScanner(false);
-    }
-  };
+  useEffect(() => {
+    if (!scannerRef.current) return;
 
-  const handleError = (err) => {
-    console.error("QR Scanner Error:", err);
-    if (err && err.name === "NotAllowedError") {
-      setQrResult("Camera permission is required. Please allow access and refresh the page.");
-    } else {
-      setQrResult(`Error: ${err.message}`);
-    }
-  };
+    const scanner = new Html5QrcodeScanner(
+      "qr-reader",
+      {
+        fps: 10,
+        qrbox: { width: 250, height: 250 }, // Adjust size
+      },
+      false
+    );
+
+    scanner.render(
+      (decodedText) => {
+        setQrResult(decodedText);
+        scanner.clear(); // Stop scanning after success
+      },
+      (error) => {
+        console.warn("QR Scan Error:", error);
+      }
+    );
+
+    return () => {
+      scanner.clear();
+    };
+  }, []);
 
   return (
     <div className="dashboard-section scanqr-section">
       <h2>Scan QR</h2>
-      {showScanner ? (
-        <div className="qr-reader-container">
-          <QrReader
-            delay={300}
-            onError={handleError}
-            onScan={handleScan}
-            style={{ width: '100%' }}
-            constraints={{ facingMode: "environment" }}
-          />
-          <button onClick={() => setShowScanner(false)} className="close-scanner-button">
-            Close Scanner
-          </button>
-          {qrResult && <p className="qr-result">{qrResult}</p>}
-        </div>
-      ) : (
-        <div className="scanqr-button-container">
-          <button onClick={() => setShowScanner(true)} className="scanqr-button">
-            Launch QR Scanner
-          </button>
-          {qrResult && <p className="qr-result">{qrResult}</p>}
-        </div>
-      )}
+      <div id="qr-reader" className="qr-reader-container" ref={scannerRef}></div>
+      {qrResult && <p className="qr-result">Scanned Result: {qrResult}</p>}
     </div>
   );
 }

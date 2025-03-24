@@ -1,56 +1,21 @@
-/* src/components/ScanQR.css */
 .scanqr-section {
   text-align: center;
-  margin-top: 2rem;
+  padding: 40px;
 }
 
 .qr-reader-container {
-  margin: 2rem auto;
-  position: relative;
-  max-width: 500px;
-}
-
-.scanqr-button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-.scanqr-button {
-  background-color: #d84315;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.scanqr-button:hover {
-  background-color: #bf360c;
-  transform: scale(1.05);
-}
-
-.close-scanner-button {
-  margin-top: 1rem;
-  background-color: #bf360c;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.close-scanner-button:hover {
-  background-color: #a72a00;
-  transform: scale(1.05);
+  margin: 40px auto;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid #ff6600;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff3e0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .qr-result {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #333;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #d84315;
 }

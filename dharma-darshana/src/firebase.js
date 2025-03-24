@@ -1,23 +1,21 @@
+// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDDDE6Vxsa-C15nKGvM4dKJaOd9nN5n8-I",
-    authDomain: "dharma-darshana-ab7ad.firebaseapp.com",
-    projectId: "dharma-darshana-ab7ad",
-    storageBucket: "dharma-darshana-ab7ad.firebasestorage.app",
-    messagingSenderId: "539617365592",
-    appId: "1:539617365592:web:c4a2db3e8b4802798ec42d",
-    measurementId: "G-X1MBD4PKTQ"
-  };
+  apiKey: "AIzaSyCrPiNnflSwnAStk8yzJPt7tXCmzmoLALs",
+  authDomain: "dharmadarshan-a5b3f.firebaseapp.com",
+  projectId: "dharmadarshan-a5b3f",
+  storageBucket: "dharmadarshan-a5b3f.firebasestorage.app",
+  messagingSenderId: "249004209474",
+  appId: "1:249004209474:web:6bbedc440c8b9e79e684db",
+  measurementId: "G-BGFZ3205VP"
+};
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const firestore = getFirestore(app);
 
-export const auth = getAuth(app);
-export const firestore = getFirestore(app);
-export const storage = getStorage(app);
-
-
-
+export { auth, firestore };
